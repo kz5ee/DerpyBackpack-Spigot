@@ -1,0 +1,6 @@
+mysql:
+  host:  localhost
+  database:  derpybackpack
+  username:  minecraft
+  password:  password
+  port:  3306
