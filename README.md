@@ -2,8 +2,22 @@
 
 # Description
 
-This plugin is going to be a multi-server (Spigot / Sponge) backpack plugin. All the things are stored in SQL.
+This plugin is a Spigot backpack plugin. At this time, items are stored in MySQL database.
 
 # Usage
 
-Right now, you don't.
+/bp - Opens the backpack
+
+permissions:
+    dbp.use:
+        default: false
+    dbp.slots.18:
+        default: false
+    dbp.slots.27:
+        default: false
+    dbp.slots.36:
+        default: false
+    dbp.slots.45:
+        default: false
+    dbp.slots.54:
+        default: false
