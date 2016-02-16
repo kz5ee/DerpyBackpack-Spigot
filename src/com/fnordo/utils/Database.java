@@ -3,6 +3,7 @@ package com.fnordo.utils;
 import com.fnordo.main.Main;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -70,18 +71,22 @@ public class Database {
 
                 player.sendMessage(inv);
 
-                InvSerializer.StringToInventory(inv, player);
+                Inventory i = InvSerializer.StringToInventory(inv);
 
-                /*for(ItemStack is : i) {
-                    if(is != null) {
-                        inventory.addItem(is);
-                    } else {
-                        inventory.addItem(new ItemStack(Material.AIR));
-                    }
-                }*/
+              /*for(ItemStack is : i) {
+                  if (is == null) {
+                     continue;
+                  }
+                    inventory.addItem(is);
+              }*/
 
+                ItemStack[] items = i.getContents();
 
-               // player.updateInventory();
+                for (int j = 0; j < items.length; j++) {
+                    inventory.setItem(j, items[j]);
+                }
+
+                player.updateInventory();
             }
 
             resultSet.close();
@@ -123,5 +128,9 @@ public class Database {
             e.printStackTrace();
         }
         return itemRows;
+    }
+
+    public static void populateDbSchema() {
+
     }
 }
