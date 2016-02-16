@@ -4,7 +4,6 @@ import com.fnordo.main.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -72,7 +71,7 @@ public class InvSerializer {
         return serialization;
     }
 
-    public static void StringToInventory(String invString, Player player) {
+    public static Inventory StringToInventory(String invString) {
         String[] serializedBlocks = invString.split(";");
         String invInfo = serializedBlocks[0];
         Inventory deserializedInventory = Bukkit.getServer().createInventory(null, Integer.valueOf(invInfo));
@@ -132,7 +131,9 @@ public class InvSerializer {
             }
         }
 
-        player.openInventory(deserializedInventory);
+        Main.instance.getLogger().info(deserializedInventory.toString());
+
+        return deserializedInventory;
     }
 
 }

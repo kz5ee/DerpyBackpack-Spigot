@@ -73,13 +73,6 @@ public class Database {
 
                 Inventory i = InvSerializer.StringToInventory(inv);
 
-              /*for(ItemStack is : i) {
-                  if (is == null) {
-                     continue;
-                  }
-                    inventory.addItem(is);
-              }*/
-
                 ItemStack[] items = i.getContents();
 
                 for (int j = 0; j < items.length; j++) {
