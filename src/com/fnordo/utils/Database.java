@@ -122,8 +122,4 @@ public class Database {
         }
         return itemRows;
     }
-
-    public static void populateDbSchema() {
-
-    }
 }

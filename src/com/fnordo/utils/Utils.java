@@ -6,11 +6,10 @@ package com.fnordo.utils;
 public class Utils {
 
     public static boolean isMultiple(int a, int b) {
-        if (a % b == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return a % b == 0;
     }
 
+    public static void populateDbSchema() {
+
+    }
 }
